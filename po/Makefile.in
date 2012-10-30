@@ -20,26 +20,26 @@ srcdir = .
 top_srcdir = ..
 
 
-prefix = /usr
+prefix = /usr/
 exec_prefix = ${prefix}
 datadir = ${prefix}/share
 localedir = $(datadir)/locale
 gettextsrcdir = $(datadir)/gettext/po
 
-INSTALL = /usr/bin/install -c
+INSTALL = /build/x86_32/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
-MKINSTALLDIRS = $(top_builddir)/./../mkinstalldirs
+MKINSTALLDIRS = $(top_builddir)/./mkinstalldirs
 mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/mkinstalldirs" ;; esac`
 
-CC = gcc
-GMSGFMT = /usr/bin/msgfmt
-MSGFMT = /usr/bin/msgfmt
-XGETTEXT = /usr/bin/xgettext
+CC = x86_64-pc-linux-gnu-gcc -mx32 --sysroot=/build/x86_32
+GMSGFMT = /build/x86_32/usr/bin/msgfmt
+MSGFMT = /build/x86_32/usr/bin/msgfmt
+XGETTEXT = /build/x86_32/usr/bin/xgettext
 MSGMERGE = msgmerge
 
 DEFS = -DHAVE_CONFIG_H
-CFLAGS = -Wall -g -O2 -fPIC -DPIC -D_GNU_SOURCE -D_REENTRANT -Wall -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -Wno-char-subscripts
-CPPFLAGS = 
+CFLAGS =  -I/build/x86_32/include -I/build/x86_32/usr/include -I/build/x86_32/usr/X11R7/include -I/build/x86_32/usr/include/glib-2.0 -I/build/x86_32/usr/include/gtk-2.0 -I/build/x86_32/usr/include/dbus-1.0 -I/build/x86_32/usr/include/python2.7/ -I/build/x86_32/opt/qt-4/include
+CPPFLAGS =  -I/build/x86_32/include -I/build/x86_32/usr/include -I/build/x86_32/usr/X11R7/include -I/build/x86_32/usr/include/glib-2.0 -I/build/x86_32/usr/include/gtk-2.0 -I/build/x86_32/usr/include/dbus-1.0 -I/build/x86_32/usr/include/python2.7/ -I/build/x86_32/opt/qt-4/include
 
 INCLUDES = -I.. -I$(top_srcdir)/intl
 
