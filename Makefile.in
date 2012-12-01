@@ -194,7 +194,6 @@ LT_AGE = @LT_AGE@
 LT_CURRENT = @LT_CURRENT@
 LT_REVISION = @LT_REVISION@
 MAKEINFO = @MAKEINFO@
-MARK64 = @MARK64@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGMERGE = @MSGMERGE@
@@ -295,7 +294,7 @@ test1="./test1"
 
 TESTS = testit.sh
 include_HEADERS = popt.h
-usrlibdir = $(libdir)@MARK64@
+usrlibdir = $(libdir)
 usrlib_LTLIBRARIES = libpopt.la
 libpopt_la_SOURCES = popt.c findme.c poptparse.c poptconfig.c popthelp.c
 libpopt_la_LDFLAGS = -no-undefined @INTLLIBS@ $(am__append_1)
