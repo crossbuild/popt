@@ -1,0 +1,5 @@
+#!/bin/bash
+
+aclocal-1.9 -I ./m4
+automake-1.9 -a -c
+autoconf
